@@ -1,0 +1,38 @@
+services:
+  postgres:
+    image: localhost:5000/registry-postgres
+    container_name: postgres
+    environment:
+      - POSTGRES_DB=etudiants
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=root
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    networks:
+      - mon_reseau
+
+  frontend:
+    image: localhost:5000/registry-frontend-image
+    container_name: frontend
+    ports:
+      - "3000:80"
+    networks:
+      - mon_reseau
+
+  backend:
+    image: localhost:5000/registry-backend-image
+    container_name: backend
+    ports:
+      - "8080:8080"
+    networks:
+      - mon_reseau
+
+volumes:
+  db_data:
+    driver: local  
+
+networks:
+  mon_reseau: 
+    driver: bridge  

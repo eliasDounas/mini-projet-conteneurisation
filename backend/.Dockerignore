@@ -1,0 +1,29 @@
+# Ignore Maven's local repository
+.mvn
+target
+
+# Ignore IntelliJ IDEA files
+.idea
+
+# Ignore Eclipse/VS Code files
+.project
+.classpath
+.settings
+.vscode
+
+# Ignore logs
+*.log
+
+# Ignore OS-generated files
+.DS_Store
+Thumbs.db
+
+# Ignore build tools caches
+*.iml
+*.bak
+*.swp
+*.temp
+*.tmp
+
+# Ignore environment variables and sensitive data
+.env

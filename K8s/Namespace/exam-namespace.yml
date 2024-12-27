@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: exam
+  labels:
+    name: exam
+    environment: dev
+spec:
+  finalizers:
+    - kubernetes.io/metadata.deletion
